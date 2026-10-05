@@ -1,0 +1,33 @@
+name: Tap CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  style:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: homebrew-zert
+
+      - uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Link tap
+        run: |
+          tapdir="$(brew --repository)/Library/Taps/torgersrud"
+          mkdir -p "$tapdir"
+          ln -fs "$GITHUB_WORKSPACE/homebrew-zert" "$tapdir/homebrew-zert"
+
+      - name: Style
+        run: brew style torgersrud/zert/zert
+
+      - name: Audit
+        run: brew audit --strict torgersrud/zert/zert
+
+      - name: Livecheck
+        run: brew livecheck --debug --verbose torgersrud/zert/zert || true
+
+      - name: Install and test formula
+        run: brew test --verbose torgersrud/zert/zert
