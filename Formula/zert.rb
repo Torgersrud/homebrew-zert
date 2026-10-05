@@ -6,12 +6,12 @@ class Zert < Formula
   # TODO: add a LICENSE file to zert-cli and set the license here
   license "UNLICENSED"
 
-  depends_on "go" => :build
-
   livecheck do
     url "https://github.com/Torgersrud/zert-cli/tags"
-    regex(/v(\d+(?:\.\d+)+)/)
+    regex(/v(\d+(?:\.\d+)+)/i)
   end
+
+  depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "."
