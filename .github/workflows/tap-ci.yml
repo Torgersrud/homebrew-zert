@@ -29,5 +29,8 @@ jobs:
       - name: Livecheck
         run: brew livecheck --debug --verbose torgersrud/zert/zert || true
 
-      - name: Install and test formula
+      - name: Install formula
+        run: brew install --formula --verbose torgersrud/zert/zert
+
+      - name: Test formula
         run: brew test --verbose torgersrud/zert/zert
