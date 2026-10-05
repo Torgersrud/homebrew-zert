@@ -12,7 +12,7 @@ jobs:
         with:
           path: homebrew-zert
 
-      - uses: Homebrew/actions/setup-homebrew@master
+      - uses: Homebrew/actions/setup-homebrew@main
 
       - name: Link tap
         run: |
