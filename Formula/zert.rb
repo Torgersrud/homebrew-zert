@@ -3,8 +3,7 @@ class Zert < Formula
   homepage "https://github.com/Torgersrud/zert-cli"
   url "https://github.com/Torgersrud/zert-cli/archive/refs/tags/v0.1.1.tar.gz"
   sha256 "288a9731520e64f42e4cdf049498d0b78313dd05ad3536cea885231705a93e36"
-  # TODO: add a LICENSE file to zert-cli and set the license here
-  license "UNLICENSED"
+  license "MIT"
 
   livecheck do
     url "https://github.com/Torgersrud/zert-cli/tags"
