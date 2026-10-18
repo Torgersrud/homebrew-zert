@@ -1,8 +1,8 @@
 class Zert < Formula
   desc "Customer CLI for the zert sandbox service"
   homepage "https://github.com/Torgersrud/zert-cli"
-  url "https://github.com/Torgersrud/zert-cli/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "c56245e94355405baf8523b06e754e0f15ddd108d82fc168d0255e1781970d51"
+  url "https://github.com/Torgersrud/zert-cli/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "b841dba489a8ec76dc6eddc7121d8f471124be5619b32912624b1034c85d98e3"
   license "MIT"
 
   livecheck do
